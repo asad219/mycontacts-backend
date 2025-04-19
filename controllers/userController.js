@@ -5,6 +5,9 @@ const jwt = require("jsonwebtoken");
 //@desc Register a User
 //@route POST /api/users/register
 //@access public (Now public)
+const testroute = asyncHandler(async (req, res) => {
+    res.json({message: "Test route"});
+});
 const registerUser = asyncHandler(async (req, res) => {
     const {username, email, password} = req.body;
     if (!username || !email || !password){
@@ -69,4 +72,4 @@ const currentUser = asyncHandler(async (req, res) => {
   res.json(req.user);
 });
 
-module.exports = { registerUser, loginUser, currentUser };
+module.exports = { registerUser, loginUser, currentUser, testroute };

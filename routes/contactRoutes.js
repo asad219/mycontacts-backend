@@ -9,6 +9,7 @@ const {
 } = require("../controllers/contactController");
 const validateToken = require("../middleware/validateTokenHandler");
 
+ 
 router.use(validateToken);
 //**** GET ALL CONTACTS AND CREATE CONTACT BECAUSE ROUTE IS SAME SINGLE SLASH "/" */
 router.route("/").get(getContacts).post(createContact);
